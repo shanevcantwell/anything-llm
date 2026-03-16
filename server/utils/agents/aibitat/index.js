@@ -42,7 +42,7 @@ class AIbitat {
       chats = [],
       interrupt = "NEVER",
       maxRounds = 100,
-      maxToolCalls = 10,
+      maxToolCalls = Number(process.env.ANYTHINGLLM_AGENT_MAX_ITERATIONS) || 10,
       provider = "openai",
       handlerProps = {}, // Inherited props we can spread so aibitat can access.
       ...rest
@@ -983,6 +983,10 @@ ${this.getHistory({ to: route.to })
         return new Providers.MistralProvider({ model: config.model });
       case "generic-openai":
         return new Providers.GenericOpenAiProvider({ model: config.model });
+      case "llama-server":
+        return new Providers.LlamaServerProvider({ model: config.model });
+      case "langgraph-agent":
+        return new Providers.LangGraphAgentProvider({ model: config.model });
       case "perplexity":
         return new Providers.PerplexityProvider({ model: config.model });
       case "textgenwebui":
