@@ -10,6 +10,8 @@ const LocalAIProvider = require("./localai.js");
 const OpenRouterProvider = require("./openrouter.js");
 const MistralProvider = require("./mistral.js");
 const GenericOpenAiProvider = require("./genericOpenAi.js");
+const LlamaServerProvider = require("./llamaServer.js");
+const LangGraphAgentProvider = require("./langGraphAgent.js");
 const PerplexityProvider = require("./perplexity.js");
 const TextWebGenUiProvider = require("./textgenwebui.js");
 const AWSBedrockProvider = require("./bedrock.js");
@@ -47,6 +49,8 @@ module.exports = {
   OpenRouterProvider,
   MistralProvider,
   GenericOpenAiProvider,
+  LlamaServerProvider,
+  LangGraphAgentProvider,
   DeepSeekProvider,
   PerplexityProvider,
   TextWebGenUiProvider,

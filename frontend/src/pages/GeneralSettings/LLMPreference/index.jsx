@@ -7,6 +7,8 @@ import showToast from "@/utils/toast";
 import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
 import OpenAiLogo from "@/media/llmprovider/openai.png";
 import GenericOpenAiLogo from "@/media/llmprovider/generic-openai.png";
+import LlamaServerLogo from "@/media/llmprovider/llama-server.png";
+import LangGraphAgentLogo from "@/media/llmprovider/langgraph-agent.png";
 import AzureOpenAiLogo from "@/media/llmprovider/azure.png";
 import AnthropicLogo from "@/media/llmprovider/anthropic.png";
 import GeminiLogo from "@/media/llmprovider/gemini.png";
@@ -45,6 +47,8 @@ import LemonadeLogo from "@/media/llmprovider/lemonade.png";
 import PreLoader from "@/components/Preloader";
 import OpenAiOptions from "@/components/LLMSelection/OpenAiOptions";
 import GenericOpenAiOptions from "@/components/LLMSelection/GenericOpenAiOptions";
+import LlamaServerOptions from "@/components/LLMSelection/LlamaServerOptions";
+import LangGraphAgentOptions from "@/components/LLMSelection/LangGraphAgentOptions";
 import AzureAiOptions from "@/components/LLMSelection/AzureAiOptions";
 import AnthropicAiOptions from "@/components/LLMSelection/AnthropicAiOptions";
 import LMStudioOptions from "@/components/LLMSelection/LMStudioOptions";
@@ -413,6 +417,32 @@ export const AVAILABLE_LLM_PROVIDERS = [
       "GenericOpenAiModelPref",
       "GenericOpenAiTokenLimit",
       "GenericOpenAiKey",
+    ],
+  },
+  {
+    name: "Llama Server",
+    value: "llama-server",
+    logo: LlamaServerLogo,
+    options: (settings) => <LlamaServerOptions settings={settings} />,
+    description:
+      "Connect to a llama-server (llama.cpp) instance via OpenAI-compatible API",
+    requiredConfig: [
+      "LlamaServerBasePath",
+      "LlamaServerModelPref",
+      "LlamaServerTokenLimit",
+    ],
+  },
+  {
+    name: "LangGraph Agent",
+    value: "langgraph-agent",
+    logo: LangGraphAgentLogo,
+    options: (settings) => <LangGraphAgentOptions settings={settings} />,
+    description:
+      "Connect to a LangGraph agentic scaffold via OpenAI-compatible API",
+    requiredConfig: [
+      "LangGraphAgentBasePath",
+      "LangGraphAgentModelPref",
+      "LangGraphAgentTokenLimit",
     ],
   },
 ];

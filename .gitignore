@@ -10,3 +10,6 @@ aws_cf_deploy_anything_llm.json
 yarn.lock
 *.bak
 .idea
+.claude/
+.continue/
+.vscode/

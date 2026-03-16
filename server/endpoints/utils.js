@@ -115,6 +115,12 @@ function getModelTag() {
     case "generic-openai":
       model = process.env.GENERIC_OPEN_AI_MODEL_PREF;
       break;
+    case "llama-server":
+      model = process.env.LLAMA_SERVER_MODEL_PREF;
+      break;
+    case "langgraph-agent":
+      model = process.env.LANGGRAPH_AGENT_MODEL_PREF;
+      break;
     case "perplexity":
       model = process.env.PERPLEXITY_MODEL_PREF;
       break;

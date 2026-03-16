@@ -157,6 +157,30 @@ class Provider {
           ),
           ...config,
         });
+      case "llama-server":
+        return new ChatOpenAI({
+          configuration: {
+            baseURL: process.env.LLAMA_SERVER_BASE_PATH,
+          },
+          apiKey: process.env.LLAMA_SERVER_API_KEY,
+          maxTokens: toValidNumber(
+            process.env.LLAMA_SERVER_MAX_TOKENS,
+            1024
+          ),
+          ...config,
+        });
+      case "langgraph-agent":
+        return new ChatOpenAI({
+          configuration: {
+            baseURL: process.env.LANGGRAPH_AGENT_BASE_PATH,
+          },
+          apiKey: process.env.LANGGRAPH_AGENT_API_KEY,
+          maxTokens: toValidNumber(
+            process.env.LANGGRAPH_AGENT_MAX_TOKENS,
+            1024
+          ),
+          ...config,
+        });
       case "bedrock":
         return createBedrockChatClient(config);
       case "fireworksai":

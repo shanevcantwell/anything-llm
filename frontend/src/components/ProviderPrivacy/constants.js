@@ -1,6 +1,8 @@
 import AnythingLLMIcon from "@/media/logo/anything-llm-icon.png";
 import OpenAiLogo from "@/media/llmprovider/openai.png";
 import GenericOpenAiLogo from "@/media/llmprovider/generic-openai.png";
+import LlamaServerLogo from "@/media/llmprovider/llama-server.png";
+import LangGraphAgentLogo from "@/media/llmprovider/langgraph-agent.png";
 import AzureOpenAiLogo from "@/media/llmprovider/azure.png";
 import AnthropicLogo from "@/media/llmprovider/anthropic.png";
 import GeminiLogo from "@/media/llmprovider/gemini.png";
@@ -155,6 +157,20 @@ const LLM_PROVIDER_PRIVACY_MAP = {
       "Data is shared according to the terms of service applicable with your generic endpoint provider.",
     ],
     logo: GenericOpenAiLogo,
+  },
+  "llama-server": {
+    name: "Llama Server (llama.cpp)",
+    description: [
+      "Your model and chats are only accessible on the server running llama-server.",
+    ],
+    logo: LlamaServerLogo,
+  },
+  "langgraph-agent": {
+    name: "LangGraph Agent",
+    description: [
+      "Data is shared according to the terms of service applicable with your LangGraph agent endpoint.",
+    ],
+    logo: LangGraphAgentLogo,
   },
   cohere: {
     name: "Cohere",

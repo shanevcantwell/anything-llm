@@ -234,6 +234,50 @@ const KEY_MAPPING = {
     checks: [nonZero],
   },
 
+  // Llama Server Inference Settings
+  LlamaServerBasePath: {
+    envKey: "LLAMA_SERVER_BASE_PATH",
+    checks: [isValidURL],
+  },
+  LlamaServerModelPref: {
+    envKey: "LLAMA_SERVER_MODEL_PREF",
+    checks: [isNotEmpty],
+  },
+  LlamaServerTokenLimit: {
+    envKey: "LLAMA_SERVER_MODEL_TOKEN_LIMIT",
+    checks: [nonZero],
+  },
+  LlamaServerKey: {
+    envKey: "LLAMA_SERVER_API_KEY",
+    checks: [],
+  },
+  LlamaServerMaxTokens: {
+    envKey: "LLAMA_SERVER_MAX_TOKENS",
+    checks: [nonZero],
+  },
+
+  // LangGraph Agent Inference Settings
+  LangGraphAgentBasePath: {
+    envKey: "LANGGRAPH_AGENT_BASE_PATH",
+    checks: [isValidURL],
+  },
+  LangGraphAgentModelPref: {
+    envKey: "LANGGRAPH_AGENT_MODEL_PREF",
+    checks: [isNotEmpty],
+  },
+  LangGraphAgentTokenLimit: {
+    envKey: "LANGGRAPH_AGENT_MODEL_TOKEN_LIMIT",
+    checks: [nonZero],
+  },
+  LangGraphAgentKey: {
+    envKey: "LANGGRAPH_AGENT_API_KEY",
+    checks: [],
+  },
+  LangGraphAgentMaxTokens: {
+    envKey: "LANGGRAPH_AGENT_MAX_TOKENS",
+    checks: [nonZero],
+  },
+
   // AWS Bedrock LLM InferenceSettings
   AwsBedrockLLMConnectionMethod: {
     envKey: "AWS_BEDROCK_LLM_CONNECTION_METHOD",
@@ -934,6 +978,8 @@ function supportedLLM(input = "") {
     "cohere",
     "litellm",
     "generic-openai",
+    "llama-server",
+    "langgraph-agent",
     "bedrock",
     "deepseek",
     "apipie",
@@ -1299,6 +1345,11 @@ function dumpENV() {
     "GENERIC_OPENAI_STREAMING_DISABLED",
     // Custom headers for Generic OpenAI
     "GENERIC_OPEN_AI_CUSTOM_HEADERS",
+
+    // Allow disabling of streaming for Llama Server
+    "LLAMA_SERVER_STREAMING_DISABLED",
+    // Allow disabling of streaming for LangGraph Agent
+    "LANGGRAPH_AGENT_STREAMING_DISABLED",
 
     // Specify Chromium args for collector
     "ANYTHINGLLM_CHROMIUM_ARGS",

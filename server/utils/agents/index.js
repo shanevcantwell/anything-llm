@@ -128,6 +128,14 @@ class AgentHandler {
         if (!process.env.GENERIC_OPEN_AI_BASE_PATH)
           throw new Error("API base path must be provided to use agents.");
         break;
+      case "llama-server":
+        if (!process.env.LLAMA_SERVER_BASE_PATH)
+          throw new Error("Llama Server base path must be provided to use agents.");
+        break;
+      case "langgraph-agent":
+        if (!process.env.LANGGRAPH_AGENT_BASE_PATH)
+          throw new Error("LangGraph Agent base path must be provided to use agents.");
+        break;
       case "perplexity":
         if (!process.env.PERPLEXITY_API_KEY)
           throw new Error("Perplexity API key must be provided to use agents.");
@@ -281,6 +289,10 @@ class AgentHandler {
         return process.env.MISTRAL_MODEL_PREF ?? "mistral-medium";
       case "generic-openai":
         return process.env.GENERIC_OPEN_AI_MODEL_PREF ?? null;
+      case "llama-server":
+        return process.env.LLAMA_SERVER_MODEL_PREF ?? null;
+      case "langgraph-agent":
+        return process.env.LANGGRAPH_AGENT_MODEL_PREF ?? null;
       case "perplexity":
         return process.env.PERPLEXITY_MODEL_PREF ?? "sonar-small-online";
       case "textgenwebui":

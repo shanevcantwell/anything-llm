@@ -6,6 +6,8 @@ export const DISABLED_PROVIDERS = [
   "azure",
   "textgenwebui",
   "generic-openai",
+  "llama-server",
+  "langgraph-agent",
   "bedrock",
 ];
 const PROVIDER_DEFAULT_MODELS = {
@@ -30,6 +32,8 @@ const PROVIDER_DEFAULT_MODELS = {
   ],
   textgenwebui: [],
   "generic-openai": [],
+  "llama-server": [],
+  "langgraph-agent": [],
   bedrock: [],
   xai: ["grok-beta"],
 };
